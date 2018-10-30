@@ -2,8 +2,7 @@
 
 package PaqueteDePrueba
 
-
-object HolaScala {
+object TechnicalProof {
   
   val answerList: List[String] = List("")
   
