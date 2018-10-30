@@ -24,6 +24,22 @@ object FlattenArray {
   }
   
   /**
+   * Illegal way to resolve the first exercise of the technical test :v
+   */
+  def flattenArrayFromString(input: String): String = {
+    var answer: String = ""
+    val stringCollection = input.split(",")
+    for(string <- stringCollection if(!string.contains("null"))) {
+      for(letter <- string if(letter != '[' && letter != ']')){
+        answer += s"$letter"
+      }
+      answer += ","
+    }
+    answer = s"[${answer.substring(0, answer.length - 1)}]"
+    answer
+  }
+  
+  /**
    * Method that determine the type of a variable.
    */
   def typeOf[T](v: T)(implicit ev: ClassTag[T]) = ev.toString
